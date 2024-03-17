@@ -2,18 +2,6 @@ import Foundation
 import URKit
 import BCTags
 
-//extension KnownValue: DigestProvider {
-//    public var digest: Digest {
-//        Digest(taggedCBOR.cborData)
-//    }
-//}
-
-//extension KnownValue: EnvelopeEncodable {
-//    public var envelope: Envelope {
-//        Envelope(self)
-//    }
-//}
-
 /// A value representing an ontological concept.
 ///
 /// Known Values are a standardized namespace of 64-bit unsigned integers that
