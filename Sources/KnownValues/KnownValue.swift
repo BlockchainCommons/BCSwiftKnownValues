@@ -1,6 +1,5 @@
 import Foundation
-import URKit
-import BCTags
+import DCBOR
 
 /// A value representing an ontological concept.
 ///
