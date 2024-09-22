@@ -50,7 +50,7 @@ public extension KnownValue {
     static let outputDescriptor = KnownValue(508, "outputDescriptor")
 }
 
-public var globalKnownValues: KnownValuesStore = [
+nonisolated(unsafe) public var globalKnownValues: KnownValuesStore = [
     .isA,
     .id,
     .verifiedBy,

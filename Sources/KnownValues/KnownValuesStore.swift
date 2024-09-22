@@ -1,8 +1,8 @@
 import Foundation
 
-public struct KnownValuesStore: Sendable {
-    var knownValuesByRawValue: [UInt64: KnownValue]
-    var knownValuesByAssignedName: [String: KnownValue]
+public struct KnownValuesStore: @unchecked Sendable {
+    public private(set) var knownValuesByRawValue: [UInt64: KnownValue]
+    public private(set) var knownValuesByAssignedName: [String: KnownValue]
     
     public init<T>(_ knownValues: T) where T: Sequence, T.Element == KnownValue {
         knownValuesByRawValue = [:]
