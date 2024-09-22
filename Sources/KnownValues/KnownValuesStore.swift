@@ -12,6 +12,7 @@ public struct KnownValuesStore {
         }
     }
     
+    @MainActor
     public mutating func insert(_ knownValue: KnownValue) {
         Self._insert(knownValue, knownValuesByRawValue: &knownValuesByRawValue, knownValuesByAssignedName: &knownValuesByAssignedName)
     }
