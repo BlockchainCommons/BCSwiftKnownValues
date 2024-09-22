@@ -1,6 +1,6 @@
 import Foundation
 
-public struct KnownValuesStore {
+public struct KnownValuesStore: Sendable {
     var knownValuesByRawValue: [UInt64: KnownValue]
     var knownValuesByAssignedName: [String: KnownValue]
     
