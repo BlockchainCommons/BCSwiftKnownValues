@@ -1,4 +1,4 @@
-// swift-tools-version: 5.10
+// swift-tools-version: 6.0
 
 import PackageDescription
 
@@ -15,7 +15,7 @@ let package = Package(
             targets: ["KnownValues"]),
     ],
     dependencies: [
-        .package(url: "https://github.com/BlockchainCommons/BCSwiftDCBOR", from: "1.0.0"),
+        .package(url: "https://github.com/BlockchainCommons/BCSwiftDCBOR", from: "2.0.0"),
     ],
     targets: [
         .target(

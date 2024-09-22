@@ -60,6 +60,31 @@ public struct KnownValuesStore {
     }
 }
 
+// Conform to Sequence protocol to make KnownValuesStore iterable.
+extension KnownValuesStore: Sequence {
+    public func makeIterator() -> KnownValuesIterator {
+        return KnownValuesIterator(knownValuesByRawValue: knownValuesByRawValue)
+    }
+}
+
+// Iterator that iterates over known values in numeric order.
+public struct KnownValuesIterator: IteratorProtocol {
+    private var sortedKnownValues: [KnownValue]
+    private var currentIndex: Int = 0
+    
+    init(knownValuesByRawValue: [UInt64: KnownValue]) {
+        // Sort the known values by their numeric value.
+        self.sortedKnownValues = knownValuesByRawValue.values.sorted(by: { $0.value < $1.value })
+    }
+    
+    public mutating func next() -> KnownValue? {
+        guard currentIndex < sortedKnownValues.count else { return nil }
+        let knownValue = sortedKnownValues[currentIndex]
+        currentIndex += 1
+        return knownValue
+    }
+}
+
 extension KnownValuesStore: ExpressibleByArrayLiteral {
     public init(arrayLiteral elements: KnownValue...) {
         self.init(elements)
