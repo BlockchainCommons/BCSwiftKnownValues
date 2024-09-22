@@ -8,7 +8,7 @@ import DCBOR
 /// standardization aims to enable compact binary representation, interoperability
 /// across systems that exchange semantic information, and enhanced security by
 /// mitigating the risks associated with URI manipulation.
-public struct KnownValue {
+public struct KnownValue: Sendable {
     /// The known value as coded into CBOR.
     public let value: UInt64
     /// A name assigned to the known value used for debugging and formatted output.
